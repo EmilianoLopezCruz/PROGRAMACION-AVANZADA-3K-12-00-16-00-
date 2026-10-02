@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox spacing="22.0" styleClass="fondo-modulo" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vistacontrolador.ControladorApartar">
+   <padding><Insets bottom="28.0" left="32.0" right="32.0" top="26.0" /></padding>
+   <children>
+      <VBox spacing="16.0" styleClass="tarjeta" HBox.hgrow="ALWAYS" minWidth="440.0">
+         <padding><Insets bottom="22.0" left="26.0" right="26.0" top="22.0" /></padding>
+         <children>
+            <Label styleClass="titulo-tarjeta" text="Datos del apartado" />
+            <Label styleClass="subtitulo" text="Dr. Navarro  ·  Docente" />
+
+            <VBox spacing="6.0">
+               <children>
+                  <Label styleClass="etiqueta-campo" text="Laboratorio" />
+                  <ComboBox fx:id="cmbLab" maxWidth="Infinity" styleClass="combo-caja" />
+               </children>
+            </VBox>
+
+            <HBox spacing="14.0">
+               <children>
+                  <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label styleClass="etiqueta-campo" text="Fecha" />
+                        <DatePicker fx:id="dpFecha" maxWidth="Infinity" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label styleClass="etiqueta-campo" text="Hora de inicio" />
+                        <ComboBox fx:id="cmbInicio" maxWidth="Infinity" styleClass="combo-caja" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label styleClass="etiqueta-campo" text="Hora de fin" />
+                        <ComboBox fx:id="cmbFin" maxWidth="Infinity" styleClass="combo-caja" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+
+            <HBox spacing="14.0">
+               <children>
+                  <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Label styleClass="etiqueta-campo" text="Materia o actividad" />
+                        <TextField promptText="Ej. Estructura de datos" styleClass="campo-texto" text="Estructura de datos" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="6.0" prefWidth="110.0">
+                     <children>
+                        <Label styleClass="etiqueta-campo" text="Grupo" />
+                        <TextField promptText="Ej. 3K" styleClass="campo-texto" text="3C" />
+                     </children>
+                  </VBox>
+                  <VBox spacing="6.0" prefWidth="110.0">
+                     <children>
+                        <Label styleClass="etiqueta-campo" text="Alumnos" />
+                        <TextField promptText="Ej. 25" styleClass="campo-texto" text="26" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+
+            <VBox spacing="6.0">
+               <children>
+                  <Label styleClass="etiqueta-campo" text="Motivo / observaciones (opcional)" />
+                  <TextArea prefRowCount="3" promptText="Ej. Práctica de bases de datos, requiere MySQL" styleClass="area-texto" text="Examen práctico de listas, pilas y colas. Requiere Java 21 y Eclipse." wrapText="true" />
+               </children>
+            </VBox>
+
+            <HBox spacing="12.0">
+               <children>
+                  <Button styleClass="btn-primario" text="Registrar apartado" />
+                  <Button styleClass="btn-secundario" text="Limpiar" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+
+      <VBox spacing="16.0" prefWidth="360.0" minWidth="320.0" maxWidth="380.0">
+         <children>
+            <VBox spacing="10.0" styleClass="tarjeta">
+               <padding><Insets bottom="18.0" left="22.0" right="22.0" top="18.0" /></padding>
+               <children>
+                  <Label styleClass="titulo-tarjeta" text="Información del laboratorio" />
+                  <Label styleClass="info-lab" wrapText="true" text="Capacidad: 30 alumnos   ·   Equipos: 30&#10;Software: Java 21, Eclipse, Office, MySQL&#10;Ubicación: Edificio principal, planta baja&#10;Responsable: Mtra. Elena Castillo&#10;Estado: Disponible" />
+               </children>
+            </VBox>
+            <VBox spacing="10.0" styleClass="tarjeta" VBox.vgrow="ALWAYS">
+               <padding><Insets bottom="18.0" left="22.0" right="22.0" top="18.0" /></padding>
+               <children>
+                  <Label fx:id="lblTituloOcupacion" styleClass="titulo-tarjeta" text="Ocupación del día" />
+                  <ListView fx:id="listaOcupacion" styleClass="lista-ocupacion" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>
