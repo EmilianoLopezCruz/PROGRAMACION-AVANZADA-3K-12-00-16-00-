@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="18.0" styleClass="fondo-modulo" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vistacontrolador.ControladorDisponibilidad">
+   <padding><Insets bottom="28.0" left="32.0" right="32.0" top="26.0" /></padding>
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="14.0">
+         <children>
+            <VBox spacing="4.0">
+               <children>
+                  <Label styleClass="titulo-pagina" text="Disponibilidad por horario" />
+                  <Label fx:id="lblSubtitulo" styleClass="subtitulo" text="" />
+               </children>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS" />
+            <Label styleClass="etiqueta-campo" text="Día:" />
+            <DatePicker fx:id="dpDia" />
+         </children>
+      </HBox>
+
+      <HBox spacing="18.0" alignment="CENTER_LEFT">
+         <children>
+            <Label styleClass="leyenda-libre" text="Libre" />
+            <Label styleClass="leyenda-ocupada" text="Ocupado" />
+            <Label styleClass="leyenda-mant" text="Mantenimiento" />
+         </children>
+      </HBox>
+
+      <VBox styleClass="tarjeta" VBox.vgrow="ALWAYS">
+         <padding><Insets bottom="14.0" left="14.0" right="14.0" top="14.0" /></padding>
+         <children>
+            <ScrollPane fitToHeight="false" fitToWidth="false" styleClass="scroll-limpio" VBox.vgrow="ALWAYS">
+               <content>
+                  <GridPane fx:id="cuadricula" hgap="4.0" vgap="4.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</VBox>

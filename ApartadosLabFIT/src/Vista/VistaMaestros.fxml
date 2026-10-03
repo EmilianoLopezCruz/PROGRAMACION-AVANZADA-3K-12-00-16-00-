@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox spacing="22.0" styleClass="fondo-modulo" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vistacontrolador.ControladorMaestros">
+   <padding><Insets bottom="28.0" left="32.0" right="32.0" top="26.0" /></padding>
+   <children>
+      <VBox spacing="14.0" styleClass="tarjeta" HBox.hgrow="ALWAYS">
+         <padding><Insets bottom="18.0" left="22.0" right="22.0" top="18.0" /></padding>
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="12.0">
+               <children>
+                  <VBox spacing="2.0">
+                     <children>
+                        <Label styleClass="titulo-tarjeta" text="Maestros registrados" />
+                        <Label fx:id="lblResumen" styleClass="subtitulo" text="" />
+                     </children>
+                  </VBox>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="txtBuscar" minWidth="220.0" prefWidth="260.0" promptText="🔍  Buscar por nombre o correo" styleClass="campo-texto" />
+               </children>
+            </HBox>
+            <TableView fx:id="tabla" styleClass="tabla" VBox.vgrow="ALWAYS">
+               <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY" /></columnResizePolicy>
+               <columns>
+                  <TableColumn fx:id="colNombre" minWidth="110.0" text="Nombre" />
+                  <TableColumn fx:id="colCorreo" minWidth="150.0" text="Correo" />
+                  <TableColumn fx:id="colDepartamento" minWidth="120.0" text="Departamento" />
+               </columns>
+            </TableView>
+            <HBox alignment="CENTER_LEFT" spacing="12.0">
+               <children>
+                  <Button fx:id="btnEliminar" onAction="#eliminarMaestro" styleClass="btn-peligro" text="🗑  Eliminar maestro" />
+                  <Label styleClass="ayuda-teclado" text="Selecciona un maestro de la tabla para eliminarlo." wrapText="true" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" minWidth="320.0" prefWidth="330.0" maxWidth="340.0" styleClass="scroll-limpio">
+         <content>
+            <VBox spacing="16.0" styleClass="fondo-modulo">
+               <padding><Insets bottom="6.0" left="2.0" right="8.0" top="2.0" /></padding>
+               <children>
+                  <VBox spacing="12.0" styleClass="tarjeta">
+                     <padding><Insets bottom="20.0" left="22.0" right="22.0" top="18.0" /></padding>
+                     <children>
+                        <Label styleClass="titulo-tarjeta" text="Agregar maestro" />
+                        <Label styleClass="subtitulo" text="Registra un maestro nuevo para poder elegirlo al apartar un laboratorio." wrapText="true" />
+                        <VBox spacing="6.0">
+                           <children>
+                              <Label styleClass="etiqueta-campo" text="Nombre (con grado)" />
+                              <TextField fx:id="txtNombre" promptText="Ej. Dra. Martínez" styleClass="campo-texto" />
+                           </children>
+                        </VBox>
+                        <VBox spacing="6.0">
+                           <children>
+                              <Label styleClass="etiqueta-campo" text="Correo institucional" />
+                              <TextField fx:id="txtCorreo" promptText="Ej. martinez@dominio.edu.mx" styleClass="campo-texto" />
+                           </children>
+                        </VBox>
+                        <VBox spacing="6.0">
+                           <children>
+                              <Label styleClass="etiqueta-campo" text="Departamento (opcional)" />
+                              <TextField fx:id="txtDepartamento" promptText="Ej. Ingeniería industrial" styleClass="campo-texto" />
+                           </children>
+                        </VBox>
+                        <HBox spacing="10.0">
+                           <children>
+                              <Button maxWidth="Infinity" onAction="#agregarMaestro" styleClass="btn-primario" text="Agregar maestro" HBox.hgrow="ALWAYS" />
+                              <Button onAction="#limpiar" styleClass="btn-secundario" text="Limpiar" />
+                           </children>
+                        </HBox>
+                        <Label fx:id="lblMensaje" managed="false" maxWidth="Infinity" visible="false" wrapText="true" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</HBox>

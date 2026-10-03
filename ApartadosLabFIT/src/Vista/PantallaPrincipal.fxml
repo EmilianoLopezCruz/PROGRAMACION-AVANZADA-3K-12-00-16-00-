@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vistacontrolador.ControladorPrincipal">
+   <children>
+      <VBox minWidth="272.0" prefWidth="272.0" maxWidth="272.0" styleClass="sidebar">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="sidebar-header">
+               <padding><Insets left="20.0" right="16.0" /></padding>
+               <children>
+                  <StackPane styleClass="logo-uat" minWidth="46.0" minHeight="46.0" maxWidth="46.0" maxHeight="46.0">
+                     <children><Label styleClass="logo-uat-texto-chico" text="UAT" /></children>
+                  </StackPane>
+                  <VBox spacing="2.0">
+                     <children>
+                        <Label styleClass="app-title" text="Apartado de Labs" />
+                        <Label styleClass="app-subtitle" text="Facultad de Ingeniería Tampico" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+
+            <VBox spacing="4.0" VBox.vgrow="ALWAYS">
+               <padding><Insets bottom="20.0" left="16.0" right="14.0" top="22.0" /></padding>
+               <children>
+                  <Label styleClass="seccion-titulo" text="PRINCIPAL" />
+                  <Button fx:id="btnInicio" maxWidth="Infinity" onAction="#irAInicio" styleClass="nav-btn" text="🏠   1.  Inicio" />
+                  <Button fx:id="btnApartar" maxWidth="Infinity" onAction="#irAApartar" styleClass="nav-btn" text="➕   2.  Apartar laboratorio" />
+                  <Button fx:id="btnApartados" maxWidth="Infinity" onAction="#irAApartados" styleClass="nav-btn" text="📋   3.  Apartados" />
+                  <Button fx:id="btnDisponibilidad" maxWidth="Infinity" onAction="#irADisponibilidad" styleClass="nav-btn" text="🗓   4.  Disponibilidad" />
+                  <Label styleClass="seccion-titulo" text="ADMINISTRACIÓN">
+                     <VBox.margin><Insets top="18.0" /></VBox.margin>
+                  </Label>
+                  <Button fx:id="btnLaboratorios" maxWidth="Infinity" onAction="#irALaboratorios" styleClass="nav-btn" text="🖥   5.  Laboratorios" />
+                  <Button fx:id="btnMaestros" maxWidth="Infinity" onAction="#irAMaestros" styleClass="nav-btn" text="👥   6.  Maestros" />
+                  <Button fx:id="btnReportes" maxWidth="Infinity" onAction="#irAReportes" styleClass="nav-btn" text="📊   7.  Reportes" />
+               </children>
+            </VBox>
+
+            <VBox spacing="6.0" styleClass="sidebar-pie">
+               <padding><Insets bottom="18.0" left="16.0" right="14.0" top="14.0" /></padding>
+               <children>
+                  <Label styleClass="ayuda-menu" text="↑ ↓ mover  ·  → entrar  ·  Esc menú" wrapText="true">
+                     <VBox.margin><Insets bottom="4.0" left="4.0" /></VBox.margin>
+                  </Label>
+                  <Button fx:id="btnAyuda" maxWidth="Infinity" onAction="#irAAyuda" styleClass="nav-btn" text="❓   8.  ¿Cómo funciona?" />
+                  <Button fx:id="btnEdificio" maxWidth="Infinity" onAction="#cambiarEdificio" styleClass="btn-salir" text="🏛   9.  Cambiar de edificio" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+
+      <VBox HBox.hgrow="ALWAYS">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="14.0" styleClass="topbar">
+               <padding><Insets left="30.0" right="30.0" /></padding>
+               <children>
+                  <VBox spacing="2.0">
+                     <children>
+                        <Label fx:id="lblTituloBarra" styleClass="titulo-barra" text="Panel general" />
+                        <Label fx:id="lblFecha" styleClass="fecha-barra" text="" />
+                     </children>
+                  </VBox>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Label fx:id="lblEdificio" styleClass="chip-edificio" text="" />
+               </children>
+            </HBox>
+            <StackPane fx:id="panelContenido" styleClass="fondo-modulo" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </children>
+</HBox>
