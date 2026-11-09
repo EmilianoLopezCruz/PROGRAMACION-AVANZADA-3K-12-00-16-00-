@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="panelFormulario" prefHeight="430.0"
+	prefWidth="600.0" style="-fx-background-color: #ffffff; -fx-border-color: #b0bec5;"
+	xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controlador.ControladorObras">
+	<padding>
+		<Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+	</padding>
+	<top>
+		<VBox spacing="12.0">
+			<Label style="-fx-font-size: 15px; -fx-font-weight: bold;"
+				text="Abrir una Obra — Administración de Obras (ID autogenerado oculto)" />
+			<GridPane hgap="10.0" vgap="8.0">
+				<columnConstraints>
+					<ColumnConstraints minWidth="135.0" prefWidth="150.0" />
+					<ColumnConstraints hgrow="ALWAYS" minWidth="200.0"
+						prefWidth="320.0" />
+				</columnConstraints>
+				<rowConstraints>
+					<RowConstraints minHeight="28.0" />
+					<RowConstraints minHeight="28.0" />
+				</rowConstraints>
+				<children>
+					<Label fx:id="labelNombreObra" text="Nombre de la obra:"
+						GridPane.columnIndex="0" GridPane.rowIndex="0" />
+					<TextField fx:id="TnombreObra" editable="false"
+						GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+					<Label fx:id="labelDescripcionObra" text="Descripción de la obra:"
+						GridPane.columnIndex="0" GridPane.rowIndex="1" />
+					<TextField fx:id="TdescripcionObra" editable="false"
+						GridPane.columnIndex="1" GridPane.rowIndex="1" />
+				</children>
+			</GridPane>
+			<HBox alignment="CENTER" spacing="12.0">
+				<Button fx:id="Bagregar" onAction="#onAltas" prefWidth="105.0"
+					text="Agregar" />
+				<Button fx:id="Bmodal" onAction="#onAbrirModalObra"
+					prefWidth="165.0" text="Agregar/Modificar (Modal)" />
+				<Button fx:id="Beliminar" onAction="#onEliminar"
+					prefWidth="105.0" text="Eliminar" />
+				<Button fx:id="Bsalir" onAction="#onSalir" prefWidth="90.0"
+					text="Salir" />
+			</HBox>
+		</VBox>
+	</top>
+	<center>
+		<ScrollPane fx:id="scrollPane" fitToHeight="true"
+			fitToWidth="true" BorderPane.alignment="CENTER">
+			<BorderPane.margin>
+				<Insets top="12.0" />
+			</BorderPane.margin>
+			<content>
+				<TableView fx:id="Tobras">
+					<columns>
+						<TableColumn fx:id="colId" prefWidth="90.0" text="ID Obra" />
+						<TableColumn fx:id="colNombre" prefWidth="200.0"
+							text="Nombre de la Obra" />
+						<TableColumn fx:id="colDescripcion" prefWidth="270.0"
+							text="Descripción" />
+					</columns>
+				</TableView>
+			</content>
+		</ScrollPane>
+	</center>
+</BorderPane>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="panelModal" spacing="14.0" prefWidth="400.0"
+	xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controlador.ControladorModalObra">
+	<padding>
+		<Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+	</padding>
+	<children>
+		<Label fx:id="lblTituloModal" style="-fx-font-size: 14px; -fx-font-weight: bold;"
+			text="Agregar / Modificar Obra (ID Autogenerado)" />
+		<GridPane hgap="10.0" vgap="10.0">
+			<columnConstraints>
+				<ColumnConstraints minWidth="135.0" prefWidth="145.0" />
+				<ColumnConstraints hgrow="ALWAYS" minWidth="190.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="28.0" />
+				<RowConstraints minHeight="28.0" />
+			</rowConstraints>
+			<children>
+				<Label text="Nombre de la obra:" GridPane.columnIndex="0"
+					GridPane.rowIndex="0" />
+				<TextField fx:id="txtNombre" GridPane.columnIndex="1"
+					GridPane.rowIndex="0" />
+				<Label text="Descripción:" GridPane.columnIndex="0"
+					GridPane.rowIndex="1" />
+				<TextField fx:id="txtDescripcion" GridPane.columnIndex="1"
+					GridPane.rowIndex="1" />
+			</children>
+		</GridPane>
+		<HBox alignment="CENTER_RIGHT" spacing="10.0">
+			<Button fx:id="btnGuardar" onAction="#onGuardar" text="Guardar" />
+			<Button fx:id="btnCancelar" onAction="#onCancelar" text="Cancelar" />
+		</HBox>
+	</children>
+</VBox>

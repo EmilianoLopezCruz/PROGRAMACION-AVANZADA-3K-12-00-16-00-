@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<categorias>
+  <categoria>
+    <id>01</id>
+    <nombre>Materiales</nombre>
+  </categoria>
+  <categoria>
+    <id>02</id>
+    <nombre>Mano de Obra</nombre>
+  </categoria>
+  <categoria>
+    <id>03</id>
+    <nombre>Maquinaria y Equipo</nombre>
+  </categoria>
+  <categoria>
+    <id>04</id>
+    <nombre>Servicios</nombre>
+  </categoria>
+</categorias>

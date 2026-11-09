@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="VentanaPrincipal" prefHeight="540.0" prefWidth="760.0"
+	xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controlador.ControladorMenuPractica2">
+	<top>
+		<MenuBar fx:id="BarraMenu">
+			<menus>
+				<Menu fx:id="Moperacion" text="Operacion">
+					<items>
+						<MenuItem fx:id="SMlayouts" onAction="#onAbrirLayouts"
+							text="Practica06_a / b / c / d (Demostración de Layouts)" />
+					</items>
+				</Menu>
+				<Menu fx:id="Mconfiguracion" text="Configuracion">
+					<items>
+						<MenuItem fx:id="SMcategorias" onAction="#onAbrirCategorias"
+							text="Categorias" />
+						<MenuItem fx:id="SMinsumos" onAction="#onAbrirInsumos"
+							text="Insumos" />
+						<MenuItem fx:id="SMobras" onAction="#onAbrirObras"
+							text="Obras" />
+						<SeparatorMenuItem />
+						<Menu fx:id="MtipoBaseDatos" text="Tipo de Base de Datos (Partefinal2)">
+							<items>
+								<RadioMenuItem fx:id="rbTxt" onAction="#onCambiarPersistencia"
+									selected="true" text="Archivos de Texto (.txt)">
+									<toggleGroup>
+										<ToggleGroup fx:id="grupoPersistencia" />
+									</toggleGroup>
+								</RadioMenuItem>
+								<RadioMenuItem fx:id="rbXml" onAction="#onCambiarPersistencia"
+									text="Archivos XML (.xml)" toggleGroup="$grupoPersistencia" />
+							</items>
+						</Menu>
+					</items>
+				</Menu>
+				<Menu fx:id="Msalir" text="Salir">
+					<items>
+						<MenuItem fx:id="SMsalida" onAction="#onSalida"
+							text="Salida" />
+					</items>
+				</Menu>
+			</menus>
+		</MenuBar>
+	</top>
+	<center>
+		<BorderPane fx:id="Escritorio" style="-fx-background-color: #eef2f7;">
+			<center>
+				<VBox fx:id="panelBienvenida" alignment="CENTER" spacing="12.0">
+					<padding>
+						<Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+					</padding>
+					<children>
+						<Label style="-fx-font-size: 18px; -fx-font-weight: bold;"
+							text="PA_a2253332354_Practica2 — JavaFX + FXML + MVC" />
+						<Label fx:id="lblModoPersistencia"
+							style="-fx-font-size: 14px; -fx-text-fill: #1f5fa8; -fx-font-weight: bold;"
+							text="Almacenamiento activo: Archivos TXT" />
+						<Label wrapText="true"
+							text="Usa el menú Configuracion para abrir Categorias, Insumos u Obras (la barra de menú se deshabilitará mientras la ventana interna esté activa y se reactivará al salir)." />
+					</children>
+				</VBox>
+			</center>
+		</BorderPane>
+	</center>
+</BorderPane>
