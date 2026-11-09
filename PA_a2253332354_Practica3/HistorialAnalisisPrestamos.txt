@@ -1,0 +1,45 @@
+========================================
+Loan Balance: $10000.00
+Interest Rate: 5.50%
+
+35 Payments of $301.96
+Final Payment of: $300.54
+Total Payments: $10869.14
+Interest Paid $869.14
+========================================
+========================================
+Loan Balance: $10000.00
+Interest Rate: 5.50%
+
+35 Payments of $301.96
+Final Payment of: $300.54
+Total Payments: $10869.14
+Interest Paid $869.14
+========================================
+========================================
+Loan Balance: $10000.00
+Interest Rate: 5.50%
+
+35 Payments of $301.96
+Final Payment of: $300.54
+Total Payments: $10869.14
+Interest Paid $869.14
+========================================
+========================================
+Loan Balance: $20000.00
+Interest Rate: 6.50%
+
+58 Payments of $400.00
+Final Payment of: $186.90
+Total Payments: $23386.90
+Interest Paid $3386.90
+========================================
+========================================
+Loan Balance: $12000.00
+Interest Rate: 0.00%
+
+23 Payments of $500.00
+Final Payment of: $500.00
+Total Payments: $12000.00
+Interest Paid $0.00
+========================================
