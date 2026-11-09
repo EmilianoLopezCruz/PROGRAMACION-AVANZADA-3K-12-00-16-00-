@@ -1,0 +1,4 @@
+01,Materiales
+02,Mano de Obra
+03,Maquinaria y Equipo
+04,Servicios
